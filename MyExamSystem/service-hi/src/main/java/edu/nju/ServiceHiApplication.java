@@ -1,5 +1,6 @@
 package edu.nju;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -12,18 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @EnableEurekaClient
 @SpringBootApplication
+@MapperScan("edu.nju.mapper")
 public class ServiceHiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceHiApplication.class, args);
 	}
 
-	@Value("${server.port}")
-	String port;
 
-
-	@RequestMapping("/hi")
-	public String home(@RequestParam String name) {
-		return "hi "+name+",i am from port:" +port;
-	}
 }
