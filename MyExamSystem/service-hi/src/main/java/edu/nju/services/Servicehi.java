@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by Administrator on 2017/11/8.
  */
 @RestController
-@RequestMapping("/heihei")
 public class Servicehi {
 
     @Value("${server.port}")
